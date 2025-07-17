@@ -70,6 +70,11 @@ async def on_ready():
         print(f"Synced {len(synced)} commande(s) avec Discord.")
     except Exception as e:
         print(f"Erreur de sync: {e}")
+    
+    # Définir l'activité du bot
+    activity = discord.Activity(type=discord.ActivityType.watching, name="Wikipédia")
+    await bot.change_presence(activity=activity)
+    
     print(f'Bot is ready as {bot.user}')
     
 
